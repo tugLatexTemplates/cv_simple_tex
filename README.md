@@ -1,7 +1,8 @@
 # curriculum vitæ
 We present a bi-lingual curriculum vitæ template with
 focus on lightweight, simplicity and extendability. 
-No strong Latex skills are needed!
+No strong Latex skills are needed! 
+This repository provides two compiled templates, in [german](cv-de.pdf) and [english](cv-en.pdf).
 
 ## Change Output Language
 We use the "[optional](http://tug.ctan.org/macros/latex/contrib/optional/optional.pdf)" 
