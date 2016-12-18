@@ -2,7 +2,7 @@
 We present a bi-lingual curriculum vitæ template with
 focus on lightweight, simplicity and extendability. 
 No strong Latex skills are needed! 
-This repository provides two compiled templates, in [german](cv-de.pdf) and [english](cv-en.pdf).
+This repository provides two compiled templates, in [german](./cv-de.pdf) and [english](./cv-en.pdf).
 
 ## Change Output Language
 We use the "[optional](http://tug.ctan.org/macros/latex/contrib/optional/optional.pdf)" 
@@ -20,7 +20,7 @@ the corresponding argument of the package "optional".
 ```
 
 ## Add Custom Content
-To add custom content in multiple languages use the "\de{...}" and "\en{...}" macros.
+To add custom content in multiple languages, use the "\de{...}" and "\en{...}" macros.
 For example:
 
 ```
@@ -38,8 +38,7 @@ In case of frequently used terms we suggest you to use makros as follows:
 and use "\myFrequentTerm" instead.
 
 ## Mandatory Parameters
-
-The mandatory parameters should be changed according to your needs.
+The following mandatory parameters should be changed according to your needs.
 
 ```
 \newcommand{\myDocumentTitle}{curriculum vit{\ae}}
@@ -47,7 +46,7 @@ The mandatory parameters should be changed according to your needs.
 ```
 
 ## Draft Compilation
-In case you need a draft compilation shwing also all margins, enable the
+In case you need a draft compilation, which is highlighting all margins, enable the
 "draft" option of the "\documentclass" macro.
 
 ```
@@ -60,6 +59,20 @@ In case you need a draft compilation shwing also all margins, enable the
 ]{scrartcl}
 ```
 
+## Todo Notes
+Many todo ntoes are attached to the document, to help you out how to 
+customize the document (see (main.pdf)[./main.pdf]).
+To globally turn them off, enable the "disable" arguent.
+
+```
+\usepackage[
+      colorinlistoftodos,
+      prependcaption,
+      textsize=tiny,
+    % disable % en-/disable todos globally
+]{todonotes}
+```
+
 ## Fine Tuning
 Sometimes the amount of text does overlay only by a few sentences with the last page.
 To in-/decrease the last page's overlap, adjust the page margin:
@@ -67,7 +80,6 @@ To in-/decrease the last page's overlap, adjust the page margin:
 ```
 \usepackage[scale=0.85]{geometry} % adjust page margins
 ```
-
 
 
 Have a noodly day!

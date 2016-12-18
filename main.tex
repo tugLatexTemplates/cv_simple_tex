@@ -11,8 +11,15 @@ DIV14, % enlarges the pages
 11pt,
 ]{scrartcl}
 
+\usepackage[
+colorinlistoftodos,
+prependcaption,
+textsize=tiny,
+% disable % en-/disable todos globally
+]{todonotes}
+
 % by modifying the page margins the total page number can be minimally adjusted
-\usepackage[scale=0.85]{geometry} % adjust page margins
+\usepackage[scale=0.8]{geometry} % adjust page margins
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -130,9 +137,9 @@ colorlinks=true,
             \en{English (mother tongue, C2), Sarcasm (in speech and writing, C1)}
     \end{cvlist}
 
-    % mention your hightest degree here instead of the (normal) education listing.
-    % explicitely mention the institution. in austria this means University, Fasthochschule, Html or Matura.
-    % also mention the title and extent of your work
+   \todo{Mention your hightest degree here instead of the (normal) education listing.
+    Explicitely mention the institution. in austria this means University, Fast\-hoch\-schule, Html or Matura.
+     Also mention the title and extent of your work}
     \begin{cvlist}{\de{Ausbildung}\en{Education}}
         \item[2015-2016]
             \de{Pastafarismus-Wirtschaft, Dipl.-Ing.\\
@@ -154,8 +161,8 @@ colorlinks=true,
                 \textbf{\myTopic:} Study on how to Cook Flying Noodles\\
                 \textbf{\myFocus:} An evaluation of low cost noodle colander}
     \end{cvlist}
-
-    \begin{cvlist}{\de{Berufserfahrung}\en{Employment}}
+    \todo{Your job history.}
+    \begin{cvlist}{\de{Berufserfahrung}\en{Career}}%Employment}}
         \item[2013-2014] 
             \de{Gottheit}
             \en{Deity}\\
@@ -185,7 +192,7 @@ colorlinks=true,
             \en{Garbage collector (holiday internship)}\\
             \myInstitution: Oregon City Garbage Co., Oregon
     \end{cvlist}
-        
+    \todo{Mention your special interest i.e.: programming languages, hobbies, sports, et cetera.}
     \begin{cvlist}{\de{Spezielle Kenntnisse}\en{Special Interests}}
         \myItem[Cooking] ~
             \mySubitem \de{Nudeln}\en{Noodles}
@@ -208,7 +215,7 @@ colorlinks=true,
                 \en{Pastafarism}
     \end{cvlist}
     
-    % if you are a technicial, explicitely mention your soft skills
+    \todo{Explicitly mention your off-topic skills. I.e. for a software engineer it's the soft skills}
     \begin{cvlist}{\de{Sozialkompetenz}\en{Soft Skills}}
         \item[2014]
             \de{Projektcontrolling}
@@ -226,7 +233,7 @@ colorlinks=true,
             \myEducationalInstitution: \myOtherUniversity, Oregon
     \end{cvlist}
     
-    % exclusive/voluntary education that does not belong to your study
+    \todo{Exclusive or voluntary education that does not belong to your study.}
     \begin{cvlist}{\de{Studium und Weiterbildung}\en{Studies and Trainings}}
         \item[2012] 
             \de{Marketing \& Propaganda}
@@ -244,9 +251,8 @@ colorlinks=true,
             \myEducationalInstitution: \myUniversity, Oregon     
     \end{cvlist}
     
-    % normal education
+    \todo{You normal education.}
     \begin{cvlist}{\de{Schulische Ausbuilding}\en{Educational Training}}
-
         \item[2008-2009] 
             \de{Pastafari Realgymnasium (Oberstufe), Hintertupfing}
             \en{Pastafarian High school, Behinddapple}
@@ -264,6 +270,7 @@ colorlinks=true,
              \en{Preschool, Hintertupfing}
     \end{cvlist}
   
+     \todo{Declare your publications if you have any.}
     \begin{cvlist}{\de{Publikationen}\en{Publications}}
         \item[2006]
             \textbf{Noodly Monster}, Henderson, Bobby. The gospel of the flying spaghetti monster. New York: Villard Books, 2006. Print.
