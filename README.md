@@ -61,7 +61,7 @@ In case you need a draft compilation, which is highlighting all margins, enable 
 
 ## Todo Notes
 Many todo ntoes are attached to the document, to help you out how to 
-customize the document (see (main.pdf)[./main.pdf]).
+customize the document (see [main.pdf](./main.pdf)).
 To globally turn them off, enable the "disable" arguent.
 
 ```
