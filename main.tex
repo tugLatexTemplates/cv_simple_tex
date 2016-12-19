@@ -11,6 +11,13 @@ DIV14, % enlarges the pages
 11pt,
 ]{scrartcl}
 
+% compilation output language setup: enable the respecive optional package
+\usepackage[
+%de, % compile to german output
+en, % compile to english output
+]{optional} 
+
+
 \usepackage[
 colorinlistoftodos,
 prependcaption,
@@ -38,12 +45,6 @@ marginparwidth=5em,
 
 \usepackage{ifdraft} % http://mirror.easyname.at/ctan/macros/latex/contrib/oberdiek/ifdraft.pdf
 \ifdraft{\usepackage{showframe}}{} % on draft option enabled show frames
-
-% compilation output language setup: enable the respecive optional package
-\usepackage[
-%de, % compile to german output
-en, % compile to english output
-]{optional} 
 
 \opt{de}{
   \usepackage[latin1]{inputenc}
@@ -132,11 +133,11 @@ colorlinks=true,
 	% set the width of the first column to the widest entry
 	\settowidth{\cvlabelwidth}{\cvlabelfont Spezielle Kenntnisse}
     \begin{cvlist}{\myDocumentAuthor}
-        \item[\de{Geboren~am}\en{Date of Birth}]
+        \item[\de{Geburtsdatum}\en{Date of Birth}]
             \de{\myTranslatedDateOfBirthDay. \myDateOfBirthMonth\ \myDateOfBirthYear}
             \en{\myDateOfBirthMonth\ \myTranslatedDateOfBirthDay, \myDateOfBirthYear}
     
-        \item[\de{Familienstand}\en{Marriage Status}]
+        \item[\de{Familienstand}\en{Marital Status}]
             \de{Ledig}
             \en{Single}
         
@@ -148,10 +149,10 @@ colorlinks=true,
             \de{Hintertupfing 13/2\\A-1920 Salzhausen}
             \en{Behinddapple 13/2\\1920 Salthausen, Austria}
         
-        \item[\de{E-Mail Adresse}\en{E-Mail}]
+        \item[\de{E-Mail-Adresse}\en{E-Mail Address}]
             noodly.monster@student.pastauniversity.at
         
-        \item [\de{Telefonnummer}\en{Phone}]
+        \item [\de{Telefonnummer}\en{Phone Number}]
             +43 (0)190 888 6969
             
         \item[\de{Führerschein}\en{Driving License}]
@@ -188,7 +189,7 @@ colorlinks=true,
                 \textbf{\myFocus:} An evaluation of low cost noodle colander}
     \end{cvlist}
     \todo{Your job history.}
-    \begin{cvlist}{\de{Berufserfahrung}\en{Career}}%Employment}}
+    \begin{cvlist}{\de{Berufserfahrung}\en{Work Experience}}
         \item[2013-2014] 
             \de{Gottheit}
             \en{Deity}\\

@@ -57,7 +57,7 @@ The following mandatory parameters should be changed according to your needs.
 
 ## Draft Compilation
 In case you need a draft compilation, which is highlighting all margins, enable the
-"draft" option of the "\documentclass" macro.
+"draft" option of the "\documentclass" macro (see [draft.pdf](./draft.pdf)).
 
 ```
 \documentclass[
