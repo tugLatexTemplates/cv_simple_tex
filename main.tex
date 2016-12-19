@@ -15,14 +15,26 @@ DIV14, % enlarges the pages
 colorinlistoftodos,
 prependcaption,
 textsize=tiny,
-% disable % en-/disable todos globally
+%disable % en-/disable todos globally
 ]{todonotes}
 
 % by modifying the page margins the total page number can be minimally adjusted
-\usepackage[scale=0.8]{geometry} % adjust page margins
+\usepackage[
+scale=0.772, % adjust page scale and margins
+%top=6em, 
+%right=6em, 
+%bottom=6em, 
+%left=6em,
+marginparwidth=5em,
+]{geometry} % http://mirror.easyname.at/ctan/macros/latex/contrib/geometry/geometry.pdf
 
-\usepackage{tikz}
+% for placing tikz nodes
+\usepackage{tikz} % http://mirror.easyname.at/ctan/graphics/pgf/contrib/tikzpagenodes/tikzpagenodes.pdf
 \usetikzlibrary{calc}
+% for placing image exactly at top right text area
+\usepackage{tikzpagenodes}
+\usetikzlibrary{tikzmark}
+
 
 \usepackage{ifdraft} % http://mirror.easyname.at/ctan/macros/latex/contrib/oberdiek/ifdraft.pdf
 \ifdraft{\usepackage{showframe}}{} % on draft option enabled show frames
@@ -30,7 +42,7 @@ textsize=tiny,
 % compilation output language setup: enable the respecive optional package
 \usepackage[
 %de, % compile to german output
- en, % compile to english output
+en, % compile to english output
 ]{optional} 
 
 \opt{de}{
@@ -49,8 +61,23 @@ textsize=tiny,
 }
 \newcommand{\en}[1]{\opt{en}{#1}} % convenience macro
 
+\usepackage[super]{nth}
+
+% mandatory arguments
+\newcommand{\myImageWidth}{12em}
 \newcommand{\myDocumentTitle}{curriculum vit{\ae}}
 \newcommand{\myDocumentAuthor}{Noodly~Monster, \de{MSc}\en{Dipl.-Ing.}}
+\newcommand{\myDocumentDay}{19}
+\newcommand{\myDocumentMonth}{\de{Dezember}\en{December}}
+\newcommand{\myDocumentYear}{2015}
+
+\newcommand{\myDateOfBirthDay}{1}
+\newcommand{\myDateOfBirthMonth}{\en{January}\de{Januar}}
+\newcommand{\myDateOfBirthYear}{2005}
+
+% translated date fields
+\newcommand{\myTranslatedDocumentDay}{\de{\myDocumentDay}\en{\nth{\myDocumentDay}}}
+\newcommand{\myTranslatedDateOfBirthDay}{\de{\myDateOfBirthDay}\en{\nth{\myDateOfBirthDay}}}
 
 \usepackage{ae,aecompl}
 
@@ -90,25 +117,24 @@ colorlinks=true,
 \newcommand{\myItem}{\item}
 \newcommand{\mySubitem}{\subitem $\circ$\ }
 
+
 \begin{document}
 \normalsize
 %\thispagestyle{empty} % en-/disable page numbering on this page
-
-
 \begin{cv}{\myDocumentTitle}
     \begin{tikzpicture}[remember picture,overlay]
-       % modify the "-(Xem,Yem)" parameter to adjust the position of your photo 
-        \node[anchor=north east,inner sep=0pt] at ($(current page.north east)-(5em,8.75em)$) {
-            \includegraphics[width=0.3\textwidth,]{./touched_by_his_noodly_appendage}
+        % http://tex.stackexchange.com/questions/229934/anchor-tikz-at-the-left-margin
+        % optionally modify the "-(Xem,Yem)" to adjust the position
+        \node[anchor=north east,inner sep=0pt] at ($(current page text area.north east)-(0,3em)$) {
+            \includegraphics[width=\myImageWidth]{./touched_by_his_noodly_appendage}
     	};
     \end{tikzpicture}
 	% set the width of the first column to the widest entry
 	\settowidth{\cvlabelwidth}{\cvlabelfont Spezielle Kenntnisse}
-
     \begin{cvlist}{\myDocumentAuthor}
         \item[\de{Geboren~am}\en{Date of Birth}]
-            \de{1. Januar 2005}
-            \en{January 1\textsuperscript{st} 2005}
+            \de{\myTranslatedDateOfBirthDay. \myDateOfBirthMonth\ \myDateOfBirthYear}
+            \en{\myDateOfBirthMonth\ \myTranslatedDateOfBirthDay, \myDateOfBirthYear}
     
         \item[\de{Familienstand}\en{Marriage Status}]
             \de{Ledig}
@@ -137,9 +163,9 @@ colorlinks=true,
             \en{English (mother tongue, C2), Sarcasm (in speech and writing, C1)}
     \end{cvlist}
 
-   \todo{Mention your hightest degree here instead of the (normal) education listing.
-    Explicitely mention the institution. in austria this means University, Fast\-hoch\-schule, Html or Matura.
-     Also mention the title and extent of your work}
+   \todo{Mention your highest degree here, instead of the (normal) education listing.
+    Explicitly mention the institution. Especially in Austria you want to emphasize your university degree versus the Fast\-hoch\-schule or HTML-Matura.
+     Also mention the title and extent of your work.}
     \begin{cvlist}{\de{Ausbildung}\en{Education}}
         \item[2015-2016]
             \de{Pastafarismus-Wirtschaft, Dipl.-Ing.\\
@@ -276,7 +302,6 @@ colorlinks=true,
             \textbf{Noodly Monster}, Henderson, Bobby. The gospel of the flying spaghetti monster. New York: Villard Books, 2006. Print.
     \end{cvlist}
 
-    \de{\cvplace{Oregon} \date{18. Dezember 2016}}
-    \en{\cvplace{Oregon} \date{December 18\textsuperscript{th} 2016}}
+    \cvplace{Oregon} \date{\en{\myDocumentMonth\  \myTranslatedDocumentDay, \myDocumentYear}\de{\myTranslatedDocumentDay\ \myDocumentMonth\ \myDocumentYear}}
 \end{cv}
 \end{document}

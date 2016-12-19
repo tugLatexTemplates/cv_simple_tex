@@ -41,8 +41,18 @@ and use "\myFrequentTerm" instead.
 The following mandatory parameters should be changed according to your needs.
 
 ```
+\newcommand{\myImageWidth}{12em} % width of your image
 \newcommand{\myDocumentTitle}{curriculum vit{\ae}}
-\newcommand{\myDocumentAuthor}{Noodly~Monster, \de{MSc}\en{Dipl.-Ing.}}
+\newcommand{\myDocumentAuthor}{Noodly~Monster, \de{MSc}\en{Dipl.-Ing.}} % your name + degree
+% date of document
+\newcommand{\myDocumentDay}{19}
+\newcommand{\myDocumentMonth}{\de{Dezember}\en{December}}
+\newcommand{\myDocumentYear}{2015}
+% date of birth
+\newcommand{\myDateOfBirthDay}{1}
+\newcommand{\myDateOfBirthMonth}{\en{January}\de{Januar}}
+\newcommand{\myDateOfBirthYear}{2005}
+
 ```
 
 ## Draft Compilation
@@ -53,7 +63,7 @@ In case you need a draft compilation, which is highlighting all margins, enable 
 \documentclass[
       a4paper,
       parskip,
-    % draft,  % en-/disable draft
+    % draft, % en-/disable draft
       DIV14,
       11pt,
 ]{scrartcl}
