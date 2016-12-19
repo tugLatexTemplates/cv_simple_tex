@@ -17,7 +17,6 @@ DIV14, % enlarges the pages
 en, % compile to english output
 ]{optional} 
 
-
 \usepackage[
 colorinlistoftodos,
 prependcaption,
@@ -116,7 +115,7 @@ colorlinks=true,
    
 % convenience macros
 \newcommand{\myItem}{\item}
-\newcommand{\mySubitem}{\subitem $\circ$\ }
+\newcommand{\mySubItem}{\\$\circ$\ }
 
 
 \begin{document}
@@ -130,36 +129,38 @@ colorlinks=true,
             \includegraphics[width=\myImageWidth]{./touched_by_his_noodly_appendage}
     	};
     \end{tikzpicture}
-	% set the width of the first column to the widest entry
-	\settowidth{\cvlabelwidth}{\cvlabelfont Spezielle Kenntnisse}
+    
+	% set the width of the first column to the entry you provide
+	\settowidth{\cvlabelwidth}{\cvlabelfont\en{Special Interrests}\de{Spezielle Kenntnisse}}
+    
     \begin{cvlist}{\myDocumentAuthor}
-        \item[\de{Geburtsdatum}\en{Date of Birth}]
+        \myItem[\de{Geburtsdatum}\en{Date of Birth}]
             \de{\myTranslatedDateOfBirthDay. \myDateOfBirthMonth\ \myDateOfBirthYear}
             \en{\myDateOfBirthMonth\ \myTranslatedDateOfBirthDay, \myDateOfBirthYear}
     
-        \item[\de{Familienstand}\en{Marital Status}]
+        \myItem[\de{Familienstand}\en{Marital Status}]
             \de{Ledig}
             \en{Single}
         
-        \item[\de{Staatsbürgerschaft}\en{Nationality}]
+        \myItem[\de{Staatsbürgerschaft}\en{Nationality}]
             \de{Österreich}
             \en{Austria}
         
-        \item[\de{Adresse}\en{Address}]
+        \myItem[\de{Adresse}\en{Address}]
             \de{Hintertupfing 13/2\\A-1920 Salzhausen}
             \en{Behinddapple 13/2\\1920 Salthausen, Austria}
         
-        \item[\de{E-Mail-Adresse}\en{E-Mail Address}]
+        \myItem[\de{E-Mail-Adresse}\en{E-Mail Address}]
             noodly.monster@student.pastauniversity.at
         
-        \item [\de{Telefonnummer}\en{Phone Number}]
+        \myItem[\de{Telefonnummer}\en{Phone Number}]
             +43 (0)190 888 6969
             
-        \item[\de{Führerschein}\en{Driving License}]
+        \myItem[\de{Führerschein}\en{Driving License}]
             \de{A, B}
             \en{A (motorcycle), B (car)}
         
-        \item[\de{Sprachen (GERS)}\en{Languages (CEFR)}]
+        \myItem[\de{Sprachen (GERS)}\en{Languages (CEFR)}]
             \de{Deutsch (Muttersprache, C2), Sarkasmus (in Wort und Schrift, C1)}
             \en{English (mother tongue, C2), Sarcasm (in speech and writing, C1)}
     \end{cvlist}
@@ -168,7 +169,7 @@ colorlinks=true,
     Explicitly mention the institution. Especially in Austria you want to emphasize your university degree versus the Fast\-hoch\-schule or HTML-Matura.
      Also mention the title and extent of your work.}
     \begin{cvlist}{\de{Ausbildung}\en{Education}}
-        \item[2015-2016]
+        \myItem[2015-2016]
             \de{Pastafarismus-Wirtschaft, Dipl.-Ing.\\
                 \textbf{\myEducationalInstitution:} \myUniversity, Oregon\\
                 \textbf{\myTopic:} Piraten und die Globale Erwärmung\\
@@ -178,7 +179,7 @@ colorlinks=true,
                 \textbf{\myTopic:} Pirates and the Global Warming\\
                 \textbf{\myFocus:} A deep survey on the correlation between the number of pirates with global temperature.}
             
-        \item[2014-2015] 
+        \myItem[2014-2015] 
             \de{Pastafarismus-Wirtschaft, BSc\\
                 \textbf{\myEducationalInstitution} \myUniversity, Oregon\\
                 \textbf{\myTopic:} Studie über das Kochen von Fliegenden Nudeln\\
@@ -190,31 +191,31 @@ colorlinks=true,
     \end{cvlist}
     \todo{Your job history.}
     \begin{cvlist}{\de{Berufserfahrung}\en{Work Experience}}
-        \item[2013-2014] 
+        \myItem[2013-2014] 
             \de{Gottheit}
             \en{Deity}\\
             \myInstitution: \mySelfEmployed, Milky Way
         
-        \item[2012-2013] 
+        \myItem[2012-2013] 
             \de{Priester}
             \en{Priest}\\
             \myInstitution: Church of the Flying Spaghetti Monster, Oregon
             
-        \item[2011-2012] 
+        \myItem[2011-2012] 
             \de{Flugschein}
             \en{Pilot's license}\\
             \myInstitution: Acme GmbH (Noodly Center for Flying Monsters \& Meatballs), Oregon
             
-        \item[2010-2011]
+        \myItem[2010-2011]
             \de{Bildungskarenz}
             \en{Paid leave for further training or education}
              
-        \item[2008-2009]
+        \myItem[2008-2009]
             \de{EDV-Leistungen: Installation, Datenrettung, Instandhaltung, Organisation etc. für Privatpersonen und Firmen}
             \en{EDP-Services: Installation, data recovery, maintenance, organization etc. for private persons and companies}\\
             \myInstitution: \mySelfEmployed
             
-        \item[2007] 
+        \myItem[2007] 
             \de{Müllmann (Ferialpraktikum)}
             \en{Garbage collector (holiday internship)}\\
             \myInstitution: Oregon City Garbage Co., Oregon
@@ -222,39 +223,39 @@ colorlinks=true,
     \todo{Mention your special interest i.e.: programming languages, hobbies, sports, et cetera.}
     \begin{cvlist}{\de{Spezielle Kenntnisse}\en{Special Interests}}
         \myItem[Cooking] ~
-            \mySubitem \de{Nudeln}\en{Noodles}
-            \mySubitem \de{Fleschklößchen}\en{Meat balls}
+            \mySubItem \de{Nudeln}\en{Noodles}
+            \mySubItem \de{Fleschklößchen}\en{Meat balls}
 
-        \item[\en{Professional pastafarian protester}\de{Professioneller Pastafari Protestant}] ~
+        \myItem[\en{Professional pastafarian protester}\de{Professioneller Pastafari Protestant}] ~
         
         \myItem[Programming] ~
-            \mySubitem PHP, JavaScript, XML, HTML 1.0
+            \mySubItem PHP, JavaScript, XML, HTML 1.0
         
-        \item[\de{Hobbys}\en{Hobbies}] ~
-            \mySubitem 
+        \myItem[\de{Hobbys}\en{Hobbies}] ~
+            \mySubItem 
                 \de{Leute mit meinem nudeligen Körperteil berühren}
                 \en{Touching people with my noodly appendage}
-            \mySubitem
+            \mySubItem
                 \de{Nudelsieb als Kopfschmuck tragen}
                 \en{Wearing colander headdress}
-            \mySubitem
+            \mySubItem
                 \de{Pastafarismus}
                 \en{Pastafarism}
     \end{cvlist}
     
     \todo{Explicitly mention your off-topic skills. I.e. for a software engineer it's the soft skills}
     \begin{cvlist}{\de{Sozialkompetenz}\en{Soft Skills}}
-        \item[2014]
+        \myItem[2014]
             \de{Projektcontrolling}
             \en{\en{Project Controlling}}\\
             \myEducationalInstitution: \myUniversity, Oregon
         
-        \item[2014]
+        \myItem[2014]
             \de{Mitarbeiterführung von Piraten}
             \en{Leadership of Pirates}\\
             \myEducationalInstitution: \myOtherUniversity, Oregon
         
-        \item[2013]
+        \myItem[2013]
             \de{Konfliktmanagement (Piratengrundkurs)}
             \en{Conflict Management (elementary pirate level)}\\
             \myEducationalInstitution: \myOtherUniversity, Oregon
@@ -262,17 +263,17 @@ colorlinks=true,
     
     \todo{Exclusive or voluntary education that does not belong to your study.}
     \begin{cvlist}{\de{Studium und Weiterbildung}\en{Studies and Trainings}}
-        \item[2012] 
+        \myItem[2012] 
             \de{Marketing \& Propaganda}
             \en{Marketing \& Propaganda}\\
             \myEducationalInstitution: \myUniversity, Oregon
             
-        \item[2011]
+        \myItem[2011]
             \de{Lehrwerkstätte - Nudeln, Fleischklößchen, Saucen}
             \en{Training Workshop - Noodles, Meatballs, Sauces}\\
             \myEducationalInstitution: \myUniversity, Oregon
             
-        \item[2010]
+        \myItem[2010]
             \de{Grundkurs zum Piratenbraumeister}
             \en{Pirate Master Brewer (elementary level)}\\
             \myEducationalInstitution: \myUniversity, Oregon     
@@ -280,26 +281,26 @@ colorlinks=true,
     
     \todo{You normal education.}
     \begin{cvlist}{\de{Schulische Ausbuilding}\en{Educational Training}}
-        \item[2008-2009] 
+        \myItem[2008-2009] 
             \de{Pastafari Realgymnasium (Oberstufe), Hintertupfing}
             \en{Pastafarian High school, Behinddapple}
             
-        \item[2007-2008]
+        \myItem[2007-2008]
             \de{Pastafari Mittelschule, Behinddapple}
             \en{Pastafarian Middle school, Hintertupfing}
         
-         \item[2006-2007] 
+         \myItem[2006-2007] 
              \de{Volksschule, Behinddapple}
              \en{Elementary school, Hintertupfing}
          
-         \item[2005-2006] 
+         \myItem[2005-2006] 
              \de{Vorschule, Behinddapple}
              \en{Preschool, Hintertupfing}
     \end{cvlist}
   
      \todo{Declare your publications if you have any.}
     \begin{cvlist}{\de{Publikationen}\en{Publications}}
-        \item[2006]
+        \myItem[2006]
             \textbf{Noodly Monster}, Henderson, Bobby. The gospel of the flying spaghetti monster. New York: Villard Books, 2006. Print.
     \end{cvlist}
 
