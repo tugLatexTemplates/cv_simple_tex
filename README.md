@@ -5,18 +5,13 @@ No strong Latex skills are needed!
 This repository provides two compiled templates, in [german](./cv-de.pdf) and [english](./cv-en.pdf).
 
 ## Change Output Language
-We use the "[optional](http://tug.ctan.org/macros/latex/contrib/optional/optional.pdf)" 
-Latex package for switching in between multiple languages.
 Currently we implement just two languages, English and German.
-To change the output language consider en-/disabling 
-the corresponding argument of the package "optional".
+To change the output language consider enabling one of the corresponding arguments.
+If both are disabled the command line arguments will be considered (see [compile-all.sh](compile-all.sh)).
 
 ```
-% compilation output language setup: enable the respecive optional package
-\usepackage[
-    % de, % compile to german output
-      en, % compile to english output
-]{optional} 
+%\def\languageEn{1}
+%\def\languageDe{1}
 ```
 
 ## Add Custom Content
@@ -56,31 +51,24 @@ The following mandatory parameters should be changed according to your needs.
 ```
 
 ## Draft Compilation
-In case you need a draft compilation, which is highlighting all margins, enable the
-"draft" option of the "\documentclass" macro (see [draft.pdf](./draft.pdf)).
+In case you need a draft compilation, which is highlighting all margins, enable one of the
+"\myDraftSwitch" options.
+If both are disabled the command line arguments will be considered (see [draft.pdf](./draft.pdf) and [compile-all.sh](compile-all.sh)).
 
 ```
-\documentclass[
-      a4paper,
-      parskip,
-    % draft, % en-/disable draft
-      DIV14,
-      11pt,
-]{scrartcl}
+% \newcommand{\myDraftSwitch}{draft,} % enable draft
+% \newcommand{\myDraftSwitch}{}       % disable draft
 ```
 
 ## Todo Notes
-Many todo ntoes are attached to the document, to help you out how to 
+Many todo notes are attached to the document, to help you out how to 
 customize the document (see [main.pdf](./main.pdf)).
-To globally turn them off, enable the "disable" arguent.
+To globally turn them off, configure one of the corresponding "\myTodoNotesSwitch" options.
+If both are disabled the command line arguments will be considered (see [compile-all.sh](compile-all.sh)).
 
 ```
-\usepackage[
-      colorinlistoftodos,
-      prependcaption,
-      textsize=tiny,
-    % disable % en-/disable todos globally
-]{todonotes}
+%\newcommand{\myTodoNotesSwitch}{}  % enable todos globally
+%\newcommand{\myTodoNotesSwitch}{disable,} % disable todos globally
 ```
 
 ## Fine Tuning

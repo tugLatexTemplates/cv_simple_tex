@@ -3,25 +3,56 @@
 % Time-stamp: <2004-06-26 17:18:02 mp>
 % Authors: The LaTeX@TUG-Team [http://latex.tugraz.at/]:
 
+% consider command line arguments for draft
+\ifdefined\enableDraft
+    \newcommand{\myDraftSwitch}{draft,}
+\else
+    \newcommand{\myDraftSwitch}{}
+\fi
+% override command line arguments for draft
+% \newcommand{\myDraftSwitch}{draft,} % enable draft
+% \newcommand{\myDraftSwitch}{} % disable draft
+
 \documentclass[
 a4paper,
 parskip, % empty line between two paragraphs
-%draft, % en-/disable draft
+\myDraftSwitch
 DIV14, % enlarges the pages
 11pt,
 ]{scrartcl}
 
 % compilation output language setup: enable the respecive optional package
-\usepackage[
-%de, % compile to german output
-en, % compile to english output
+% override command line arguments for language selection of the output pdf. if both are
+%\def\languageEn{1}
+%\def\languageDe{1}
+% consider command line arguments for language selection
+\ifdefined\languageDe
+    \newcommand{\myOutputLanguage}{de}
+\else
+    \newcommand{\myOutputLanguage}{en}
+\fi
+
+\usepackage[{}
+    % consider the language option
+    \myOutputLanguage,
 ]{optional} 
+
+% consider command line arguments for todo notes
+\ifdefined\enableTodoNodes{}
+    \newcommand{\myTodoNotesSwitch}{}
+\else{}
+    \newcommand{\myTodoNotesSwitch}{disable,}
+\fi{}
+
+% override command line arguments for todo notes
+% \newcommand{\myTodoNotesSwitch}{}  % enable todos globally
+% \newcommand{\myTodoNotesSwitch}{disable,} % disable todos globally
 
 \usepackage[
 colorinlistoftodos,
 prependcaption,
 textsize=tiny,
-%disable % en-/disable todos globally
+\myTodoNotesSwitch
 ]{todonotes}
 
 % by modifying the page margins the total page number can be minimally adjusted
