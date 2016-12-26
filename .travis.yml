@@ -1,0 +1,27 @@
+language: generic
+ 
+###############################################################################
+install:
+  - travis_retry wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu
+  - chmod +x ./install-tl-ubuntu
+  - sudo ./install-tl-ubuntu
+  - export PATH="/opt/texbin:$PATH"
+
+###############################################################################
+before_script:
+  # Check texlive version
+  - tlmgr version -v
+  # Check which tex packages we have available
+  - tlmgr info --only-installed ||
+        echo "Couldn't retrieve the texlive package list!"
+
+###############################################################################
+script:
+  # Use this for simple DVI
+  - latex -halt-on-error -interaction nonstopmode small2e
+  # Use this for simple PDF
+  - pdflatex -halt-on-error -interaction nonstopmode small2e
+  # Use this for PDF with bibtex citations
+  - pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04 && 
+    pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04 &&
+    pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04
