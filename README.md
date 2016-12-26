@@ -1,4 +1,4 @@
-# curriculum vitæ
+# curriculum vitæ [![Build Status](https://travis-ci.org/tugLatexTemplates/cv_simple_tex.svg?branch=master)](https://travis-ci.org/tugLatexTemplates/cv_simple_tex)
 We present a bi-lingual curriculum vitæ template with
 focus on lightweight, simplicity and extendability. 
 No strong Latex skills are needed! 
