@@ -22,6 +22,6 @@ script:
   # Use this for simple PDF
   - pdflatex -halt-on-error -interaction nonstopmode small2e
   # Use this for PDF with bibtex citations
-  - pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04 && 
-    pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04 &&
-    pdflatex -halt-on-error -interaction nonstopmode LastNamePreName-SCR-04
+  - pdflatex -halt-on-error -interaction nonstopmode main && 
+    pdflatex -halt-on-error -interaction nonstopmode main &&
+    pdflatex -halt-on-error -interaction nonstopmode main-04
