@@ -24,4 +24,4 @@ script:
   # Use this for PDF with bibtex citations
   - pdflatex -halt-on-error -interaction nonstopmode main && 
     pdflatex -halt-on-error -interaction nonstopmode main &&
-    pdflatex -halt-on-error -interaction nonstopmode main-04
+    pdflatex -halt-on-error -interaction nonstopmode main
